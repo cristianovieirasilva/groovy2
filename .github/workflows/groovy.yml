@@ -13,6 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: HCL AppScan CodeSweep
+  # You may pin to the exact commit or the version.
+  # uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@967f17b25f94a4bd5de1fa712a63c3aedc4edfe6
+  uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v1
+  with:
+    # API key for connecting to ASoC.
+    asoc_key: 
+    # Secret for connecting to ASoC.
+    asoc_secret: 
+    # The status of the checks if any security issues are found. One of action_required, failure, or neutral.
+    status: # optional, default is neutral
     - name: set up JDK 11
       uses: actions/setup-java@v2
       with:
