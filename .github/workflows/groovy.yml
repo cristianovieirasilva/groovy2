@@ -19,13 +19,6 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
-on: [pull_request]
-on: [pull_request]
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -39,3 +32,9 @@ jobs:
           asoc_secret: ${{secrets.ASOC_SECRET}}
     env: 
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew build
+on: [pull_request]
+on: [pull_request]
