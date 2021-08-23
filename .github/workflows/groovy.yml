@@ -8,18 +8,6 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'adopt'
-jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +18,7 @@ jobs:
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
-    env: 
+      env: 
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
