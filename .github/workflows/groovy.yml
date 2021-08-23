@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: HCL AppScan CodeSweep
   # You may pin to the exact commit or the version.
-  # uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@967f17b25f94a4bd5de1fa712a63c3aedc4edfe6
+  uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@967f17b25f94a4bd5de1fa712a63c3aedc4edfe6
   uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v1
   with:
     # API key for connecting to ASoC.
