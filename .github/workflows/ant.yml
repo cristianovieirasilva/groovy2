@@ -1,0 +1,32 @@
+# This workflow will build a Java project with Ant
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-ant
+
+name: Java CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+    - name: Build with Ant
+      run: ant -noinput -buildfile build.xml
+- name: Setup Maven
+  # You may pin to the exact commit or the version.
+  # uses: stCarolas/setup-maven@3c9ddfb1c6df927e174580018dd71e774bc7dd48
+  uses: stCarolas/setup-maven@v4.1
+  with:
+    # Version Spec of the version to use.  Examples: 10.x, 10.15.1, >=10.15.0
+    maven-version: # optional, default is 3.5.4
